@@ -1,0 +1,102 @@
+* {
+    margin: 0; padding: 0;
+}
+
+body {
+    background-color: #FAEDCD;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+    background-color: #D4A373;
+    padding: 1.3vh 2vw;
+    width: auto;
+    font-size: xx-large;
+	box-shadow: 0px 0px 7px 7px rgb(0, 0, 0, 0.1);
+}
+
+#header-title-text {
+	flex: 1;
+    text-align: left;
+    padding-left: 3vw;
+}
+
+#header-title-img-menu {
+    width: 3vw;
+}
+
+.header-linker-groupe {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #f0dcca;
+	border-radius: 10px;
+}
+
+.header-linker-item {
+	padding: 1.7em;
+	margin: 0.4em;
+	margin-left: 0.6em;
+	margin-right: 0.6em;
+	background-color: rgba(0, 0, 0, 0);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	border: none;
+	transition: 1s;
+}
+
+.header-linker-item:hover{
+	transform: scale(1.1) rotate(2deg);
+	transition: 500ms;
+	cursor: pointer;
+}
+
+.header-linker-item:{
+	transform: scale(1.1) rotate(360deg);
+	transition: 2s;
+}
+
+#header-linker-item-home{
+	background-image: url("../data/png/home.png");
+}
+
+#header-linker-item-play{
+	background-image: url("../data/png/play.png");
+	padding: 1.5em;
+}
+
+.body-first-block {
+    margin: 5vh auto auto;
+    width: 70vw;
+    height: 70vh;
+    background-color: #CCD5AE;
+    border-radius: 0.5em;
+    box-shadow: 0px 2px 4px 2px rgb(0, 0, 0, 0.1);
+}
+
+.body-first-block-closers {
+    margin: 1vh 0.2vw;
+    float: right;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 0.8em;
+}
+
+#first-block-closers-green {
+    background-color: green;
+    margin-right: 0.5vw;
+}
+
+#first-block-closers-orange {
+    background-color: orange;
+}
+
+#first-block-closers-red {
+    background-color: red;
+}
+
+#game-canvas {
+    display: block;
+}
