@@ -90,7 +90,7 @@ class Game {
     createPlayers() {
         for (let i = 0; i < this.players.size; i++) {
             const player = this.players.get(i);
-            // console.log(player);
+            console.log(player);
             this.context.drawImage(this.imgPlayer, player.X, player.Y, 50, 50);
         }
     }

@@ -1,5 +1,0 @@
-{
-  "scripts": {
-    "start": "tsc --project frontend/tsconfig.json && npm run start:dev --prefix backend/"
-  }
-}

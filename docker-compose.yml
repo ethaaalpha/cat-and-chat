@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: ../docker/frontend.dockerfile
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./frontend:/usr/src/app
+    command: python3 -m http.server 3001
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: ../docker/backend.dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./backend:/usr/src/app
+    command: npm run start:dev
