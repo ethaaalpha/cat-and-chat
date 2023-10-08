@@ -1,6 +1,6 @@
 FROM node:18
 
-WORKDIR /usr/src/app
+WORKDIR /app
 COPY *.json ./
 RUN npm install
 RUN npm install -g @nestjs/cli
