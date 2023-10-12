@@ -20,7 +20,7 @@ export class Player {
             return ;
         const   baseY = this.Y;
         let     jumpForce = 3;
-        let     gravity = 3;
+        let     gravity = 2.5; // 1 = forte 10 pas forte
         let     velocity = 1;
 
         this.isJumping = true;

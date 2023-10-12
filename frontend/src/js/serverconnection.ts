@@ -1,4 +1,5 @@
 import { Player } from "./player";
+import { mapMaxX, mapMaxY } from "./game";
 
 export class SocketServer {
   id: number;
@@ -40,14 +41,16 @@ export class SocketServer {
         case "add":
           const values = JSON.parse(message.data);
           if (values.x === "default") {
-            this.players.set(message.id, new Player(250, 250));
+            this.players.set(message.id, new Player(mapMaxX / 2, mapMaxY * 0.91));
           }
           else {
             this.players.set(message.id, new Player(values.x, values.y));
           }
           break;
         case "remove":
+          console.log("to delete " + message);
           this.players.delete(message.id);
+          console.log(this.players);
           break;
         case "update":
           const value = JSON.parse(message.data);
@@ -61,7 +64,7 @@ export class SocketServer {
     while (1)
     {
       await new Promise(resolve => setTimeout(resolve, 1));
-      console.log("SENDED");
+      // console.log("SENDED");
       this.wbSocket.send(JSON.stringify({event: "update", data: {
           name: this.localPlayer.name,
           x: this.localPlayer.X,

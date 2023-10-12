@@ -12,12 +12,13 @@ const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const home_controller_1 = require("./home/home.controller");
 const gateway_module_1 = require("./websocket/gateway.module");
+const game_module_1 = require("./game/game.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [gateway_module_1.GatewayModule],
+        imports: [gateway_module_1.GatewayModule, game_module_1.GameModule],
         controllers: [app_controller_1.AppController, home_controller_1.HomeController],
         providers: [app_service_1.AppService],
     })

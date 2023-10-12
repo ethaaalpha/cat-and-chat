@@ -17,6 +17,7 @@ var _SocketServer_instances, _SocketServer_makeServerRuntime, _SocketServer_send
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SocketServer = void 0;
 const player_1 = require("./player");
+const game_1 = require("./game");
 class SocketServer {
     constructor(players, localPlayer) {
         _SocketServer_instances.add(this);
@@ -50,14 +51,16 @@ _SocketServer_instances = new WeakSet(), _SocketServer_makeServerRuntime = funct
             case "add":
                 const values = JSON.parse(message.data);
                 if (values.x === "default") {
-                    this.players.set(message.id, new player_1.Player(250, 250));
+                    this.players.set(message.id, new player_1.Player(game_1.mapMaxX / 2, game_1.mapMaxY * 0.91));
                 }
                 else {
                     this.players.set(message.id, new player_1.Player(values.x, values.y));
                 }
                 break;
             case "remove":
+                console.log("to delete " + message);
                 this.players.delete(message.id);
+                console.log(this.players);
                 break;
             case "update":
                 const value = JSON.parse(message.data);
@@ -69,7 +72,7 @@ _SocketServer_instances = new WeakSet(), _SocketServer_makeServerRuntime = funct
     return __awaiter(this, void 0, void 0, function* () {
         while (1) {
             yield new Promise(resolve => setTimeout(resolve, 1));
-            console.log("SENDED");
+            // console.log("SENDED");
             this.wbSocket.send(JSON.stringify({ event: "update", data: {
                     name: this.localPlayer.name,
                     x: this.localPlayer.X,

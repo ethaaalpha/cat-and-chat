@@ -53,7 +53,7 @@ header {
 	cursor: pointer;
 }
 
-.header-linker-item:{
+.header-linker-item{
 	transform: scale(1.1) rotate(360deg);
 	transition: 2s;
 }
@@ -98,5 +98,5 @@ header {
 }
 
 #game-canvas {
-    display: block;
+    display: flex;
 }
